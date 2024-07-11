@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <context-param>
+    <param-name>database.url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/personas</param-value>
+  </context-param>
+  <context-param>
+    <param-name>database.username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>database.password</param-name>
+    <param-value></param-value>
+  </context-param>
+
+  <servlet>
+    <servlet-name>PersonServlet</servlet-name>
+    <servlet-class>example.controller.PersonServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PersonServlet</servlet-name>
+    <url-pattern>/usuarios/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>
